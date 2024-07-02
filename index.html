@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <script>
+        function redirect() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            // iOS detection
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/cn/app/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/id1454663939";
+            }
+            // Android detection
+            else if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.YoStarEN.Arknights";
+            }
+            // Default to a generic page or your website
+            else {
+                window.location.href = "https://www.arknights.global/";
+            }
+        }
+    </script>
+</head>
+<body onload="redirect()">
+    <p>Redirecting to the appropriate app store...</p>
+</body>
+</html>
